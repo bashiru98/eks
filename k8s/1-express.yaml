@@ -22,18 +22,18 @@ spec:
         app: express
     spec:
       containers:
-      - name: express
-        image: 424432388155.dkr.ecr.us-east-1.amazonaws.com/express:v0.1.0
-        ports:
-        - name: http
-          containerPort: 8080
-        resources:
-          requests:
-            memory: 64Mi
-            cpu: 100m
-          limits:
-            memory: 128Mi
-            cpu: 300m
+        - name: express
+          image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/bash98/express
+          ports:
+            - name: http
+              containerPort: 8080
+          resources:
+            requests:
+              memory: 64Mi
+              cpu: 100m
+            limits:
+              memory: 128Mi
+              cpu: 300m
 ---
 apiVersion: v1
 kind: Service
@@ -44,5 +44,5 @@ spec:
   selector:
     app: express
   ports:
-  - protocol: TCP
-    port: 8080
+    - protocol: TCP
+      port: 8080
