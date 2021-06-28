@@ -24,6 +24,14 @@ spec:
       containers:
         - name: auth
           image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/auth
+          env:
+            - name: MONGO_URI
+              value: "mongodb://auth-mongo-srv:27017/auth"
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: jwt
           resources:
             requests:
               memory: 64Mi
