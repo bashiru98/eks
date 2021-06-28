@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/bash98/express
+          image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/bash98/auth
           resources:
             requests:
               memory: 64Mi
@@ -42,4 +42,4 @@ spec:
     app: auth
   ports:
     - protocol: TCP
-      port: 8080
+      port: 3000
