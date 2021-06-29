@@ -10,7 +10,7 @@ metadata:
   name: expiration-depl
   namespace: staging
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: expiration
