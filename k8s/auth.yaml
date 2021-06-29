@@ -24,6 +24,7 @@ spec:
       containers:
         - name: auth
           image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/auth
+          imagePullPolicy: "Always"
           readinessProbe:
             httpGet:
               path: /api/users/cpu/test

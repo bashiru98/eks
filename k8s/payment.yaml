@@ -22,6 +22,7 @@ spec:
       containers:
         - name: payments
           image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/payment
+          imagePullPolicy: "Always"
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
