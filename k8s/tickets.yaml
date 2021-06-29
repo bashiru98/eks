@@ -43,16 +43,16 @@ spec:
                   name: jwt-secret
                   key: jwt
 ---
+
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: tickets-srv
   namespace: staging
 spec:
-  ports:
-    - name: tickets
-      protocol: TCP
-      port: 3000
-      targetPort: 3000
   selector:
     app: tickets
+  ports:
+    - protocol: TCP
+      port: 3000
