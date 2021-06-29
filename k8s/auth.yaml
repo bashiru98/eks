@@ -25,19 +25,9 @@ spec:
         - name: auth
           image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/auth
           readinessProbe:
-          initialDelaySeconds: 1
-          periodSeconds: 2
-          timeoutSeconds: 1
-          successThreshold: 1
-          failureThreshold: 1
-          httpGet:
-            host:
-            scheme: HTTP
-            path: /api/users/cpu/test
-            httpHeaders:
-              - name: Host
-                value: api.yesilhealth.com
-            port: 3000
+            httpGet:
+              path: /api/users/cpu/test
+              port: 3000
           env:
             - name: MONGO_URI
               value: "mongodb://auth-mongo-srv:27017/auth"
