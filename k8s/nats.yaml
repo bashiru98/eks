@@ -54,6 +54,5 @@ spec:
       protocol: TCP
       port: 8222
       targetPort: 8222
-  type: ClusterIp
   selector:
     app: nats
