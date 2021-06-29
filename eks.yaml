@@ -4,13 +4,13 @@ kind: ClusterConfig
 metadata:
   name: cluster
   region: us-east-1
-availabilityZones: 
-- us-east-1a
-- us-east-1b
+availabilityZones:
+  - us-east-1a
+  - us-east-1b
 managedNodeGroups:
-- name: on-demand
-  labels:
-    role: on-demand
-  instanceType: t2.small
-  desiredCapacity: 1
-  volumeSize: 20
+  - name: on-demand
+    labels:
+      role: on-demand
+    instanceType: m5.large
+    desiredCapacity: 3
+    volumeSize: 20
