@@ -22,6 +22,10 @@ spec:
       containers:
         - name: tickets
           image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/tickets
+          readinessProbe:
+            httpGet:
+              path: /api/tickets/cpu/test
+              port: 3000
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
