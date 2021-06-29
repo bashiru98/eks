@@ -30,7 +30,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: orderss-srv
+                name: orders-srv
                 port:
                   number: 3000
           - path: /api/payments/?(.*)
