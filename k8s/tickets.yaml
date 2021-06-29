@@ -22,12 +22,12 @@ spec:
       containers:
         - name: tickets
           image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/tickets
-          readinessProbe:
-            httpGet:
-              path: /api/tickets/test
-              port: 3000
-            initialDelaySeconds: 10
-            periodSeconds: 5
+          # readinessProbe:
+          #   httpGet:
+          #     path: /api/tickets/test
+          #     port: 3000
+          #   initialDelaySeconds: 10
+          #   periodSeconds: 5
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
