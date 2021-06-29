@@ -24,17 +24,10 @@ spec:
       containers:
         - name: auth
           image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/auth
-          args:
-            - /bin/sh
-            - -c
-            - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
           readinessProbe:
-            exec:
-              command:
-                - cat
-                - /tmp/healthy
-            initialDelaySeconds: 30
-            periodSeconds: 5
+            httpGet:
+              path: /api/users/cpu/test
+              port: 3000
           env:
             - name: MONGO_URI
               value: "mongodb://auth-mongo-srv:27017/auth"
