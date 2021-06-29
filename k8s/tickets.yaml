@@ -10,7 +10,7 @@ metadata:
   name: tickets-depl
   namespace: staging
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: tickets
