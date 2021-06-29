@@ -12,7 +12,7 @@ spec:
     - host: api.yesilhealth.com
       http:
         paths:
-          - path: /api/users/?(.*)
+          - path: /api/users/(.*)
             pathType: Prefix
             backend:
               service:
