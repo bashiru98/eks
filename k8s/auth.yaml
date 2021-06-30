@@ -30,10 +30,10 @@ spec:
         - name: auth
           image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/auth
           imagePullPolicy: "Always"
-          readinessProbe:
-            httpGet:
-              path: /api/users/cpu/test
-              port: 3000
+          # readinessProbe:
+          #   httpGet:
+          #     path: /api/users/cpu/test
+          #     port: 3000
           volumeMounts:
             - name: mongo-persistent-storage
               mountPath: /data/db
