@@ -19,9 +19,17 @@ spec:
       labels:
         app: tickets-mongo
     spec:
+      volumes:
+        - name: mongo-persistent-storage
+          # pointer to the configuration of HOW we want the mount to be implemented
+          persistentVolumeClaim:
+            claimName: tickets-mongo-pvc
       containers:
         - name: tickets-mongo
           image: mongo
+          volumeMounts:
+            - name: mongo-persistent-storage
+              mountPath: /data/db
 ---
 apiVersion: v1
 kind: Service
