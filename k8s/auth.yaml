@@ -21,11 +21,11 @@ spec:
       labels:
         app: auth
     spec:
-      volumes:
-        - name: mongo-persistent-storage
-          # pointer to the configuration of HOW we want the mount to be implemented
-          persistentVolumeClaim:
-            claimName: auth-mongo-pvc
+      # volumes:
+      #   - name: mongo-persistent-storage
+      #     # pointer to the configuration of HOW we want the mount to be implemented
+      #     persistentVolumeClaim:
+      #       claimName: auth-mongo-pvc
       containers:
         - name: auth
           image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/auth
@@ -34,9 +34,9 @@ spec:
           #   httpGet:
           #     path: /api/users/cpu/test
           #     port: 3000
-          volumeMounts:
-            - name: mongo-persistent-storage
-              mountPath: /data/db
+          # volumeMounts:
+          #   - name: mongo-persistent-storage
+          #     mountPath: /data/db
           env:
             - name: MONGO_URI
               value: "mongodb://auth-mongo-srv:27017/auth"
