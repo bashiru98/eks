@@ -12,21 +12,7 @@ spec:
     - host: api.yesilhealth.com
       http:
         paths:
-          - path: /api/users/?(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: auth-srv
-                port:
-                  number: 3000
           - path: /api/tickets/?(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: tickets-srv
-                port:
-                  number: 3000
-          - path: /api/tickets/test
             pathType: Prefix
             backend:
               service:
@@ -45,6 +31,13 @@ spec:
             backend:
               service:
                 name: payments-srv
+                port:
+                  number: 3000
+          - path: /api/users/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: auth-srv
                 port:
                   number: 3000
           - path: /
