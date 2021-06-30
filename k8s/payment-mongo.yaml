@@ -21,7 +21,6 @@ spec:
     spec:
       volumes:
         - name: mongo-persistent-storage
-          # pointer to the configuration of HOW we want the mount to be implemented
           persistentVolumeClaim:
             claimName: payments-mongo-pvc
       containers:
