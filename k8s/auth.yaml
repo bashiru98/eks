@@ -25,6 +25,14 @@ spec:
         - name: auth
           image: 799440659939.dkr.ecr.us-east-1.amazonaws.com/auth
           imagePullPolicy: "Always"
+          volumeMounts:
+            - name: mongo-persistent-storage
+              mountPath: /data/db
+      volumes:
+        - name: mongo-persistent-storage
+          # pointer to the configuration of HOW we want the mount to be implemented
+          persistentVolumeClaim:
+            claimName: auth-mongo-pvc
           readinessProbe:
             httpGet:
               path: /api/users/cpu/test
